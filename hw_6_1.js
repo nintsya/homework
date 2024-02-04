@@ -1,19 +1,12 @@
-
-//var s = '';
-function drawTriangle (h,s){
-    for (let i = 0; i < h; i++) {
-        for (let j = 0; j < h; j++) {
-          s=s+1
-        console.log(s);
+function drawTriangle (h,s) {
+    for (let i = 1; i <= h; i++) {
+        var p = '';
+        for (let j = 1; j <= i; j++) {
+            p=p+s
+        }
+      console.log(p);
+    }
 }
-}
-}
-
-drawTriangle(2, '*');
+drawTriangle(14, '++');
 
 
-// var s = "";
-// for(var i = 1; i < 11; i += 1) {
-//   s += i + " ";
-// }
-// console.log(s);
