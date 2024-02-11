@@ -1,39 +1,14 @@
-// Перевірка теорії ймовірності. Напишіть функцію яка буде генерувати певну кількість випадкових чисел в діапазоні від 100 до 1000 включно. 
-//Порахувати кількість парних та непарних серед них. Обчислити відсоткове співвідношення - чи буде воно близьке до 50%50? 
-//Приклад функції checkProbabilityTheory(count). Парметр count буде вказувати скільки разів буде генеруватися випадкове число.
+// Написати свою реалізацію функції isNaN. 
 
-// Умови виконання ДЗ
-
-// Функція виводить інформацію
-// Кількість згенерованих чисел: кількість чисел
-// Парних чисел: кількість парних чисел
-// Не парних чисел: кількість не парних чисел
-// Відсоток парних до не парних: 
-
-
-
-function genRandom(min, max) {
-    return Math.random() * (max - min) + min;
+function myIsNaN(x){
+    return (0*x) !== 0
 }
-function checkProbabilityTheory(count){
-    p=0;
-    np=0;
-    for (i=0; i<count; i++) {
-        res = Math.floor(genRandom(100,1000));
-        if (res % 2 === 0){
-            p++
-        }
-        else {
-            np++
-        }
+
+function TestCases () {
+    cases=[1, "wqe", "12", true, '12', '37,5', '37.5', undefined, null, NaN, 0, '-']
+    for (let i=0; i<cases.length; i++){
+        console.log( myIsNaN(cases[i])===isNaN(cases[i]), cases[i])
     }
-    s=np+p;
-    console.log('Всього було згенеровано чисел:', s)
-    console.log('З них непарних: ', np, ', що становить', Math.round(np/s*100)+'%')
-    console.log('і парних:', p, ', що становить', Math.round(p/s*100)+'%')
-} 
+}
 
-checkProbabilityTheory(300);
-checkProbabilityTheory(4345);
-
-
+TestCases()
