@@ -21,7 +21,7 @@ var services = {
     "Миття голови": 100,
     price: function () {
         let s=0
-        let values = Object.values(services)
+        let values = Object.values(this)
         for (let i=0; i<values.length; i++){
             if (isNaN(values[i])) {
                 continue
@@ -32,7 +32,7 @@ var services = {
     } , 
     maxPrice: function () {
         let mx=0
-        let values = Object.values(services)
+        let values = Object.values(this)
         for (let i=0; i<values.length; i++){
             if (isNaN(values[i])) {
                 continue
@@ -45,7 +45,7 @@ var services = {
     }  ,
     minPrice: function () {
         let mn = Infinity
-        let values = Object.values(services)
+        let values = Object.values(this)
         for (let i=0; i<values.length; i++){
             if (isNaN(values[i])) {
                 continue
@@ -62,4 +62,4 @@ services['Розбити скло'] = 2000;
 services['coffee'] = 30;
 console.log (services.price());
 console.log (services.maxPrice());
- console.log (services.minPrice());
+console.log (services.minPrice());
